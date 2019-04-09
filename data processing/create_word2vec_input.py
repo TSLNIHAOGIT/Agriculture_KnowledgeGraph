@@ -42,7 +42,7 @@ def judge(s):  #含有非中文和英文，数字的词丢弃
 		return False
 	return True
 
-# 给定分词结果，提取NER
+# 给定分词结果，提取NER#根据分词以及词性标注结果提取实体
 def createWordList(x):
 	i = 0
 	n = len(x)
@@ -90,28 +90,32 @@ def createTable(num):
 	file_object = open('article'+str(num)+".txt",'w')
 	file_object.write(file_text)
 	file_object.close()
+def ttest():
+		thu = thulac.thulac()
+		detail = "张华住在北京，并且在干旱、半干旱地区依靠自然降水栽培小麦。"
 
-createTable(0)
-#createTable(1)
-#createTable(2)
-#createTable(3)
-#createTable(4)
-#createTable(5)
-#createTable(6)
-#createTable(7)
-#createTable(8)
-#createTable(9)
+		text = thu.cut(detail)
+		for x in text:
+			# print(x[1])
+			print(x)
 
-#test()
-	
-	
-#def test():  
-#	thu = thulac.thulac()
-#	detail = "指在干旱、半干旱地区依靠自然降水栽培小麦。"
-#	text = thu.cut(detail)
-#	for x in text:
-#		print(x[1])
-#		
+
+if __name__=='__main__':
+	# createTable(0)
+	#createTable(1)
+	#createTable(2)
+	#createTable(3)
+	#createTable(4)
+	#createTable(5)
+	#createTable(6)
+	#createTable(7)
+	#createTable(8)
+	#createTable(9)
+
+	ttest()
+
+
+
 
 		
 		
